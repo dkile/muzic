@@ -32,4 +32,4 @@ The MVP should behave like a local desktop workspace for job applications, not a
 
 ## Requirements
 
-See `job-posting-business-spec.md` for the first detailed business spec.
+To be expanded during product planning.

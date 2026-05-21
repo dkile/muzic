@@ -23,6 +23,7 @@ update them as part of the work instead of relying on memory.
 
 - Keep `docs/CURRENT.md` short and current.
 - Keep product details in `docs/product/`.
+- Write product spec and business spec documents in Korean.
 - Keep architecture and implementation boundaries in `docs/engineering/`.
 - Keep important decisions in `docs/decisions/`.
 - Create `docs/plans/active/` plans for non-trivial work and move completed plans
@@ -87,4 +88,3 @@ Inside `ui/features`, a feature may define a local `model/` folder for view mode
 - Avoid hiding unclear ideas behind generic terms like "use case" unless the code
   boundary is explicit.
 - Explain abstract boundaries with actual file, function, and dependency examples.
-

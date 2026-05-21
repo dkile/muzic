@@ -5,6 +5,7 @@
 - Treat `docs/` as the durable project memory.
 - Keep `docs/CURRENT.md` short, current, and useful as the first recovery point after context loss.
 - Update product, design, and engineering docs when decisions or architecture change.
+- Write product spec and business spec documents in Korean.
 - Use `docs/engineering/working-with-agents.md` for detailed collaboration and feedback-loop guidance.
 - Create an active plan in `docs/plans/active/` for non-trivial implementation work.
 - Move completed plans to `docs/plans/completed/` with a short result summary.

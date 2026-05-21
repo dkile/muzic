@@ -66,19 +66,19 @@ global app skeleton, navigation, domain rules, or persistence concerns.
 
 ## Routing
 
-The UI uses TanStack Router with code-based route definitions.
+Routing policy lives in `docs/engineering/routing.md`.
 
-Routing setup belongs in `src/ui/app/router.ts` so the route tree and webview
-URL policy stay localized. The Tauri app uses hash history because packaged
-webview assets behave more like static files than a server with path rewrites.
+The current accepted direction is TanStack Router with code-based routes and
+hash history for the Tauri webview.
 
-Routes map to the primary page sections:
+## Assets
 
-- `/`
-- `/discovery`
-- `/processes`
-- `/materials`
-- `/alerts`
+Web assets in `public/` should be app-owned assets only. Remove default Vite or
+Tauri template assets when they are not referenced by the UI.
+
+Native app bundle icons live under `src-tauri/icons/`. These are not ordinary
+frontend assets and should be kept unless replacing the app icon set through the
+Tauri icon workflow or updating `src-tauri/tauri.conf.json` accordingly.
 
 ## System Responsibilities
 

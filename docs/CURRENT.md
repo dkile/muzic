@@ -22,15 +22,18 @@ The MVP is local-only, has no AI features, and focuses on four core areas:
 - Target the TypeScript-side architecture as UI, business, and adapter systems.
 - Keep portable business logic in TypeScript `business`; use adapters for external systems including Tauri/Rust.
 - Use TanStack Router with code-based routes and hash history for the Tauri webview.
+- Remove unused web template assets from `public/`; keep `src-tauri/icons/` as native app bundle icon assets until a real app icon replaces them.
 
 ## Next Documents
 
 - Expand `product/mvp-requirements.md`.
-- Continue from `product/job-posting-business-spec.md` for job posting business rules.
 - Continue from `design/information-architecture.md` for screen-level decisions.
 - Continue from `engineering/architecture.md` for frontend/Tauri boundary decisions.
+- Continue from `engineering/routing.md` for route definitions and webview URL policy.
 - Use `engineering/working-with-agents.md` for collaboration and agent feedback-loop guidance.
 - See `decisions/0002-typescript-business-adapter-boundaries.md` for business and adapter boundaries.
+- See `decisions/0003-tanstack-router-hash-history.md` for routing policy.
+- See `decisions/0004-template-assets-and-tauri-icons.md` for asset cleanup policy.
 
 ## Current Code Shape
 
