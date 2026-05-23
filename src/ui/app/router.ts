@@ -6,7 +6,7 @@ import {
   createRouter,
 } from "@tanstack/react-router";
 import { EntryPage } from "../pages/entry";
-import { FilesPage } from "../pages/files";
+import { ResumePage } from "../pages/resume";
 
 const entryRoute = createRoute({
   getParentRoute: () => rootRoute,
@@ -14,10 +14,10 @@ const entryRoute = createRoute({
   component: EntryPage
 });
 
-const filesRoute = createRoute({
+const resumeRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: "/files",
-  component: FilesPage
+  path: "/resume",
+  component: ResumePage
 })
 
 const rootRoute = createRootRoute({
@@ -26,7 +26,7 @@ const rootRoute = createRootRoute({
 
 const routeTree = rootRoute.addChildren([
   entryRoute,
-  filesRoute,
+  resumeRoute,
 ]);
 
 export const router = createRouter({
