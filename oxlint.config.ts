@@ -1,6 +1,7 @@
-import { defineConfig } from 'oxlint';
+import { defineConfig } from "oxlint";
 
 export default defineConfig({
-  plugins: ['typescript'],
+  plugins: ["typescript"],
   rules: {},
-})
+  ignorePatterns: ["src-tauri/*"],
+});
