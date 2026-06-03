@@ -1,13 +1,14 @@
 {
-  "name": "music-planner",
-  "private": true,
+  "name": "mubaek",
   "version": "0.1.0",
+  "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsgo --noEmit && vite build",
     "preview": "vite preview",
-    "tauri": "tauri"
+    "tauri": "tauri",
+    "lint": "oxlint"
   },
   "dependencies": {
     "@tanstack/react-router": "^1.170.6",
@@ -20,8 +21,11 @@
     "@tauri-apps/cli": "^2",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
-    "@vitejs/plugin-react": "^4.6.0",
-    "typescript": "~5.8.3",
-    "vite": "^7.0.4"
+    "@typescript/native-preview": "7.0.0-dev.20260603.1",
+    "@vitejs/plugin-react-oxc": "^0.4.3",
+    "oxfmt": "^0.53.0",
+    "oxlint": "^1.68.0",
+    "typescript": "^5.8.3",
+    "vite": "^8.0.0"
   }
 }
