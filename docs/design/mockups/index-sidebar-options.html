@@ -1,0 +1,848 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Index Sidebar Mockups</title>
+    <style>
+      @font-face {
+        font-family: "Pretendard Variable";
+        font-display: swap;
+        font-style: normal;
+        font-weight: 45 920;
+        src: url("../../../src/ui/app/fonts/PretendardVariable.woff2")
+          format("woff2-variations");
+      }
+
+      :root {
+        --ink: oklch(22% 0.018 255);
+        --muted: oklch(54% 0.017 255);
+        --soft: oklch(68% 0.014 250);
+        --hairline: oklch(87% 0.008 240 / 54%);
+        --panel-a: oklch(99% 0.004 230 / 54%);
+        --panel-b: oklch(98% 0.006 235 / 47%);
+        --panel-c: oklch(99% 0.003 220 / 50%);
+        --active: oklch(100% 0 0 / 66%);
+        --hover: oklch(100% 0 0 / 42%);
+        --accent: oklch(62% 0.12 252);
+        --accent-soft: oklch(72% 0.082 245);
+        --success: oklch(69% 0.14 154);
+        --warning: oklch(76% 0.15 82);
+        --danger: oklch(67% 0.18 30);
+        color: var(--ink);
+        background: oklch(97% 0.004 245);
+        font-family:
+          "Pretendard Variable",
+          Pretendard,
+          -apple-system,
+          BlinkMacSystemFont,
+          "SF Pro Text",
+          "Apple SD Gothic Neo",
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        padding: 32px;
+      }
+
+      .desktop-preview {
+        display: grid;
+        gap: 12px;
+        margin-bottom: 34px;
+      }
+
+      .desktop-window {
+        display: grid;
+        grid-template-columns: 304px 1fr;
+        width: min(1280px, calc(100vw - 64px));
+        height: 820px;
+        overflow: hidden;
+        border-radius: 22px;
+        background: oklch(100% 0 0);
+        box-shadow:
+          0 36px 90px oklch(34% 0.018 250 / 18%),
+          0 4px 18px oklch(34% 0.018 250 / 9%);
+      }
+
+      .desktop-sidebar {
+        position: relative;
+        display: flex;
+        min-width: 0;
+        flex-direction: column;
+        overflow: hidden;
+        border-right: 1px solid oklch(91% 0.007 240 / 50%);
+        background:
+          linear-gradient(
+            180deg,
+            oklch(100% 0 0 / 26%),
+            oklch(100% 0 0 / 6%) 52%,
+            oklch(93% 0.024 146 / 12%)
+          ),
+          oklch(99% 0.004 235 / 34%);
+        box-shadow:
+          inset 0 1px 0 oklch(100% 0 0 / 54%),
+          inset -1px 0 0 oklch(100% 0 0 / 28%);
+      }
+
+      .desktop-main {
+        display: flex;
+        min-width: 0;
+        flex-direction: column;
+        background: oklch(100% 0 0);
+      }
+
+      .main-topbar {
+        display: flex;
+        height: 48px;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid oklch(93% 0.004 245);
+        padding: 0 18px;
+      }
+
+      .main-title {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+      }
+
+      .main-title strong {
+        font-size: 14px;
+        font-weight: 690;
+      }
+
+      .main-title span {
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .main-actions {
+        display: flex;
+        gap: 6px;
+      }
+
+      .main-body {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 260px;
+        gap: 28px;
+        min-height: 0;
+        padding: 28px 34px;
+      }
+
+      .work-column {
+        display: grid;
+        align-content: start;
+        gap: 18px;
+        min-width: 0;
+      }
+
+      .page-heading {
+        max-width: 560px;
+      }
+
+      .page-heading h2 {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 760;
+        letter-spacing: 0;
+        text-wrap: balance;
+      }
+
+      .page-heading p {
+        margin: 8px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.55;
+        text-wrap: pretty;
+      }
+
+      .desktop-list {
+        display: grid;
+        overflow: hidden;
+        border-radius: 16px;
+        box-shadow:
+          inset 0 0 0 1px oklch(92% 0.004 245),
+          0 1px 2px oklch(32% 0.016 250 / 5%);
+      }
+
+      .desktop-row {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        min-height: 58px;
+        align-items: center;
+        border-bottom: 1px solid oklch(94% 0.004 245);
+        padding: 0 16px;
+      }
+
+      .desktop-row:last-child {
+        border-bottom: 0;
+      }
+
+      .desktop-row strong {
+        display: block;
+        font-size: 14px;
+        font-weight: 640;
+      }
+
+      .desktop-row span {
+        display: block;
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .aside-stack {
+        display: grid;
+        align-content: start;
+        gap: 12px;
+      }
+
+      .mini-panel {
+        border-radius: 16px;
+        padding: 15px;
+        box-shadow:
+          inset 0 0 0 1px oklch(92% 0.004 245),
+          0 1px 2px oklch(32% 0.016 250 / 5%);
+      }
+
+      .mini-panel strong {
+        display: block;
+        font-size: 13px;
+        font-weight: 690;
+      }
+
+      .mini-panel p {
+        margin: 7px 0 0;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.45;
+      }
+
+      .stage {
+        display: grid;
+        grid-template-columns: repeat(3, 360px);
+        gap: 28px;
+        align-items: start;
+      }
+
+      .option {
+        display: grid;
+        gap: 12px;
+      }
+
+      .option-title {
+        margin: 0;
+        color: oklch(42% 0.024 252);
+        font-size: 13px;
+        font-weight: 650;
+        letter-spacing: 0;
+      }
+
+      .sidebar {
+        position: relative;
+        display: flex;
+        width: 360px;
+        height: 900px;
+        flex-direction: column;
+        overflow: hidden;
+        border-radius: 28px;
+        border: 1px solid var(--hairline);
+        box-shadow:
+          inset 0 1px 0 oklch(100% 0 0 / 70%),
+          inset -1px 0 0 oklch(100% 0 0 / 42%),
+          0 24px 70px oklch(34% 0.022 250 / 13%),
+          0 3px 12px oklch(30% 0.02 255 / 8%);
+      }
+
+      .sidebar::before {
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(
+            180deg,
+            oklch(100% 0 0 / 36%),
+            oklch(100% 0 0 / 12%) 46%,
+            oklch(93% 0.025 146 / 16%)
+          ),
+          radial-gradient(
+            circle at 24px 80px,
+            oklch(100% 0 0 / 30%),
+            oklch(100% 0 0 / 0%) 220px
+          );
+        content: "";
+        pointer-events: none;
+      }
+
+      .sidebar > * {
+        position: relative;
+      }
+
+      .option-a {
+        background: var(--panel-a);
+      }
+
+      .option-b {
+        background: var(--panel-b);
+      }
+
+      .option-c {
+        background: var(--panel-c);
+      }
+
+      .chrome {
+        display: flex;
+        height: 58px;
+        align-items: center;
+        gap: 10px;
+        padding: 0 22px;
+      }
+
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        box-shadow: inset 0 -1px 0 oklch(0% 0 0 / 18%);
+      }
+
+      .red {
+        background: var(--danger);
+      }
+
+      .yellow {
+        background: var(--warning);
+      }
+
+      .green {
+        background: var(--success);
+      }
+
+      .toolbar {
+        display: flex;
+        min-height: 48px;
+        align-items: center;
+        gap: 8px;
+        padding: 0 18px;
+      }
+
+      .app-mark {
+        display: grid;
+        width: 34px;
+        height: 34px;
+        place-items: center;
+        border-radius: 12px;
+        background: oklch(100% 0 0 / 58%);
+        box-shadow:
+          inset 0 1px 0 oklch(100% 0 0 / 78%),
+          0 1px 2px oklch(28% 0.02 250 / 7%);
+        color: var(--accent);
+        font-size: 15px;
+        font-weight: 760;
+      }
+
+      .title-group {
+        min-width: 0;
+        flex: 1;
+      }
+
+      .app-name {
+        margin: 0;
+        font-size: 15px;
+        font-weight: 720;
+        letter-spacing: 0;
+      }
+
+      .caption {
+        margin: 2px 0 0;
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 470;
+      }
+
+      .icon-button {
+        display: grid;
+        width: 40px;
+        height: 40px;
+        place-items: center;
+        border: 0;
+        border-radius: 14px;
+        background: oklch(100% 0 0 / 0%);
+        color: var(--muted);
+        font: inherit;
+      }
+
+      .search {
+        display: flex;
+        height: 38px;
+        align-items: center;
+        gap: 9px;
+        margin: 10px 18px 16px;
+        border-radius: 14px;
+        background: oklch(100% 0 0 / 48%);
+        padding: 0 13px;
+        box-shadow:
+          inset 0 0 0 1px oklch(88% 0.006 245 / 52%),
+          inset 0 1px 0 oklch(100% 0 0 / 74%);
+        color: var(--soft);
+        font-size: 13px;
+      }
+
+      .section {
+        margin-top: 10px;
+        padding: 0 12px;
+      }
+
+      .section-label {
+        margin: 18px 10px 8px;
+        color: oklch(48% 0.018 252);
+        font-size: 11px;
+        font-weight: 680;
+      }
+
+      .nav-list {
+        display: grid;
+        gap: 2px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .nav-item {
+        display: grid;
+        grid-template-columns: 28px 1fr auto;
+        min-height: 42px;
+        align-items: center;
+        gap: 8px;
+        border-radius: 13px;
+        padding: 0 10px;
+        color: oklch(30% 0.02 252);
+        font-size: 14px;
+        font-weight: 520;
+      }
+
+      .nav-item.active {
+        background: var(--active);
+        box-shadow:
+          inset 0 1px 0 oklch(100% 0 0 / 82%),
+          0 1px 2px oklch(28% 0.018 250 / 6%);
+      }
+
+      .nav-item.active::before {
+        position: absolute;
+        width: 3px;
+        height: 18px;
+        margin-left: -5px;
+        border-radius: 999px;
+        background: var(--accent);
+        content: "";
+      }
+
+      .icon {
+        display: grid;
+        width: 28px;
+        height: 28px;
+        place-items: center;
+        color: oklch(43% 0.022 252);
+        font-size: 14px;
+      }
+
+      .badge {
+        min-width: 24px;
+        border-radius: 999px;
+        background: oklch(100% 0 0 / 58%);
+        padding: 3px 7px;
+        color: oklch(44% 0.018 250);
+        font-size: 11px;
+        font-variant-numeric: tabular-nums;
+        font-weight: 660;
+        text-align: center;
+      }
+
+      .project {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 4px;
+        min-height: 48px;
+        align-items: center;
+        border-radius: 14px;
+        padding: 7px 10px;
+      }
+
+      .project-name {
+        overflow: hidden;
+        font-size: 13px;
+        font-weight: 580;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .project-meta {
+        margin-top: 2px;
+        color: var(--muted);
+        font-size: 11px;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .progress {
+        width: 58px;
+        height: 5px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: oklch(84% 0.012 250 / 54%);
+      }
+
+      .progress span {
+        display: block;
+        height: 100%;
+        border-radius: inherit;
+        background: var(--accent-soft);
+      }
+
+      .footer {
+        display: flex;
+        margin-top: auto;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 18px 18px;
+        box-shadow: inset 0 1px 0 oklch(100% 0 0 / 34%);
+      }
+
+      .avatar {
+        display: grid;
+        width: 36px;
+        height: 36px;
+        place-items: center;
+        border-radius: 50%;
+        background: oklch(72% 0.12 252);
+        color: oklch(100% 0 0);
+        font-size: 13px;
+        font-weight: 760;
+      }
+
+      .person {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .person strong {
+        display: block;
+        font-size: 13px;
+        font-weight: 660;
+      }
+
+      .person span {
+        color: var(--muted);
+        font-size: 11px;
+      }
+
+      .timeline {
+        display: grid;
+        gap: 8px;
+        padding: 0 16px;
+      }
+
+      .timeline-row {
+        display: grid;
+        grid-template-columns: 8px 1fr auto;
+        min-height: 44px;
+        align-items: center;
+        gap: 10px;
+        border-radius: 14px;
+        padding: 0 10px;
+      }
+
+      .pin {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--accent-soft);
+      }
+
+      .timeline-row strong {
+        display: block;
+        font-size: 13px;
+        font-weight: 630;
+      }
+
+      .timeline-row span {
+        color: var(--muted);
+        font-size: 11px;
+      }
+
+      .metric-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        padding: 0 18px;
+      }
+
+      .metric {
+        border-radius: 18px;
+        background: oklch(100% 0 0 / 38%);
+        padding: 13px 14px;
+        box-shadow: inset 0 1px 0 oklch(100% 0 0 / 62%);
+      }
+
+      .metric strong {
+        display: block;
+        font-size: 24px;
+        font-variant-numeric: tabular-nums;
+        font-weight: 760;
+        line-height: 1;
+      }
+
+      .metric span {
+        display: block;
+        margin-top: 6px;
+        color: var(--muted);
+        font-size: 11px;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="desktop-preview">
+      <h2 class="option-title">Selected Direction · Desktop Application Context</h2>
+      <div class="desktop-window">
+        <aside class="desktop-sidebar">
+          <div class="chrome">
+            <span class="dot red"></span><span class="dot yellow"></span
+            ><span class="dot green"></span>
+          </div>
+          <div class="toolbar">
+            <div class="app-mark">무</div>
+            <div class="title-group">
+              <h1 class="app-name">무백</h1>
+              <p class="caption">오늘의 지원 작업 4개</p>
+            </div>
+            <button class="icon-button">＋</button>
+          </div>
+          <div class="search"><span>⌕</span><span>회사, 자료, 단계 검색</span></div>
+          <nav class="section">
+            <p class="section-label">파이프라인</p>
+            <ul class="nav-list">
+              <li class="nav-item active"><span class="icon">①</span><span>발견</span><span class="badge">8</span></li>
+              <li class="nav-item"><span class="icon">②</span><span>지원 준비</span><span class="badge">5</span></li>
+              <li class="nav-item"><span class="icon">③</span><span>전형 진행</span><span class="badge">4</span></li>
+              <li class="nav-item"><span class="icon">④</span><span>결과 정리</span><span class="badge">2</span></li>
+            </ul>
+          </nav>
+          <div class="section">
+            <p class="section-label">자료</p>
+            <ul class="nav-list">
+              <li class="nav-item"><span class="icon">▤</span><span>이력서 버전</span><span class="badge">3</span></li>
+              <li class="nav-item"><span class="icon">✎</span><span>자기소개서</span></li>
+              <li class="nav-item"><span class="icon">◫</span><span>포트폴리오</span></li>
+            </ul>
+          </div>
+          <div class="section">
+            <p class="section-label">오늘</p>
+            <div class="timeline">
+              <div class="timeline-row"><span class="pin"></span><div><strong>링크 복기</strong><span>15:00</span></div><span class="badge">D-1</span></div>
+              <div class="timeline-row"><span class="pin"></span><div><strong>이력서 수정</strong><span>18:30</span></div><span class="badge">초안</span></div>
+            </div>
+          </div>
+          <footer class="footer">
+            <div class="avatar">용</div>
+            <div class="person"><strong>개인 MVP</strong><span>로컬 전용</span></div>
+            <button class="icon-button">⋯</button>
+          </footer>
+        </aside>
+        <main class="desktop-main">
+          <header class="main-topbar">
+            <div class="main-title"><strong>발견</strong><span>타깃 회사와 채용 공고 정리</span></div>
+            <div class="main-actions"><button class="icon-button">⌕</button><button class="icon-button">⋯</button></div>
+          </header>
+          <div class="main-body">
+            <section class="work-column">
+              <div class="page-heading">
+                <h2>이번 주에 검토할 회사</h2>
+                <p>좌측 Index는 앱 전체의 workflow rail로 고정하고, 우측 작업영역은 선택한 단계의 상세 작업만 조용하게 보여줍니다.</p>
+              </div>
+              <div class="desktop-list">
+                <div class="desktop-row"><div><strong>토스 Frontend Engineer</strong><span>채용 공고 저장 · 이력서 매칭 필요</span></div><span class="badge">높음</span></div>
+                <div class="desktop-row"><div><strong>무신사 Product Engineer</strong><span>포트폴리오 링크 점검 필요</span></div><span class="badge">D-3</span></div>
+                <div class="desktop-row"><div><strong>라인플러스 Web Platform</strong><span>기술 스택 메모 작성 중</span></div><span class="badge">검토</span></div>
+                <div class="desktop-row"><div><strong>카카오 Career Boost</strong><span>전형 단계 확인 필요</span></div><span class="badge">신규</span></div>
+              </div>
+            </section>
+            <aside class="aside-stack">
+              <div class="mini-panel"><strong>오늘의 초점</strong><p>지원 준비보다 발견 단계의 후보 정리를 먼저 끝내는 흐름입니다.</p></div>
+              <div class="mini-panel"><strong>자료 상태</strong><p>이력서 3개 버전과 자기소개서 초안 1개가 연결되어 있습니다.</p></div>
+              <div class="mini-panel"><strong>다음 알림</strong><p>무신사 지원 마감까지 3일 남았습니다.</p></div>
+            </aside>
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <div class="stage">
+      <section class="option">
+        <h2 class="option-title">1. Quiet Index</h2>
+        <aside class="sidebar option-a">
+          <div class="chrome">
+            <span class="dot red"></span><span class="dot yellow"></span
+            ><span class="dot green"></span>
+          </div>
+          <div class="toolbar">
+            <div class="app-mark">무</div>
+            <div class="title-group">
+              <h1 class="app-name">무백</h1>
+              <p class="caption">취업 준비 작업공간</p>
+            </div>
+            <button class="icon-button">⌘</button>
+          </div>
+          <div class="search"><span>⌕</span><span>검색</span></div>
+          <nav class="section">
+            <p class="section-label">작업</p>
+            <ul class="nav-list">
+              <li class="nav-item active"><span class="icon">⌂</span><span>홈</span></li>
+              <li class="nav-item"><span class="icon">▤</span><span>이력서</span><span class="badge">3</span></li>
+              <li class="nav-item"><span class="icon">◎</span><span>지원 현황</span><span class="badge">12</span></li>
+              <li class="nav-item"><span class="icon">□</span><span>회사</span></li>
+              <li class="nav-item"><span class="icon">◧</span><span>자료함</span></li>
+              <li class="nav-item"><span class="icon">◌</span><span>알림</span></li>
+            </ul>
+          </nav>
+          <div class="section">
+            <p class="section-label">최근</p>
+            <div class="project">
+              <div>
+                <div class="project-name">프론트엔드 포지션</div>
+                <div class="project-meta">오늘 업데이트</div>
+              </div>
+              <div class="progress"><span style="width: 66%"></span></div>
+            </div>
+            <div class="project">
+              <div>
+                <div class="project-name">토스 지원 자료</div>
+                <div class="project-meta">2일 전</div>
+              </div>
+              <div class="progress"><span style="width: 42%"></span></div>
+            </div>
+          </div>
+          <footer class="footer">
+            <div class="avatar">용</div>
+            <div class="person"><strong>용준 정</strong><span>로컬 작업공간</span></div>
+            <button class="icon-button">⚙</button>
+          </footer>
+        </aside>
+      </section>
+
+      <section class="option">
+        <h2 class="option-title">2. Workflow Sections</h2>
+        <aside class="sidebar option-b">
+          <div class="chrome">
+            <span class="dot red"></span><span class="dot yellow"></span
+            ><span class="dot green"></span>
+          </div>
+          <div class="toolbar">
+            <div class="app-mark">M</div>
+            <div class="title-group">
+              <h1 class="app-name">오늘의 지원</h1>
+              <p class="caption">집중할 작업 4개</p>
+            </div>
+            <button class="icon-button">＋</button>
+          </div>
+          <div class="search"><span>⌕</span><span>회사, 자료, 단계 검색</span></div>
+          <nav class="section">
+            <p class="section-label">파이프라인</p>
+            <ul class="nav-list">
+              <li class="nav-item active"><span class="icon">①</span><span>발견</span><span class="badge">8</span></li>
+              <li class="nav-item"><span class="icon">②</span><span>지원 준비</span><span class="badge">5</span></li>
+              <li class="nav-item"><span class="icon">③</span><span>전형 진행</span><span class="badge">4</span></li>
+              <li class="nav-item"><span class="icon">④</span><span>결과 정리</span><span class="badge">2</span></li>
+            </ul>
+          </nav>
+          <div class="section">
+            <p class="section-label">자료</p>
+            <ul class="nav-list">
+              <li class="nav-item"><span class="icon">▤</span><span>이력서 버전</span><span class="badge">3</span></li>
+              <li class="nav-item"><span class="icon">✎</span><span>자기소개서</span></li>
+              <li class="nav-item"><span class="icon">◫</span><span>포트폴리오</span></li>
+            </ul>
+          </div>
+          <div class="section">
+            <p class="section-label">오늘</p>
+            <div class="timeline">
+              <div class="timeline-row"><span class="pin"></span><div><strong>링크 복기</strong><span>15:00</span></div><span class="badge">D-1</span></div>
+              <div class="timeline-row"><span class="pin"></span><div><strong>이력서 수정</strong><span>18:30</span></div><span class="badge">초안</span></div>
+            </div>
+          </div>
+          <footer class="footer">
+            <div class="avatar">용</div>
+            <div class="person"><strong>개인 MVP</strong><span>로컬 전용</span></div>
+            <button class="icon-button">⋯</button>
+          </footer>
+        </aside>
+      </section>
+
+      <section class="option">
+        <h2 class="option-title">3. Progress Rail</h2>
+        <aside class="sidebar option-c">
+          <div class="chrome">
+            <span class="dot red"></span><span class="dot yellow"></span
+            ><span class="dot green"></span>
+          </div>
+          <div class="toolbar">
+            <div class="app-mark">J</div>
+            <div class="title-group">
+              <h1 class="app-name">지원 보드</h1>
+              <p class="caption">이번 주 진행률</p>
+            </div>
+            <button class="icon-button">⌕</button>
+          </div>
+          <div class="metric-grid">
+            <div class="metric"><strong>12</strong><span>타깃 회사</span></div>
+            <div class="metric"><strong>4</strong><span>진행 중</span></div>
+          </div>
+          <nav class="section">
+            <p class="section-label">주요 화면</p>
+            <ul class="nav-list">
+              <li class="nav-item active"><span class="icon">◉</span><span>대시보드</span></li>
+              <li class="nav-item"><span class="icon">⌘</span><span>회사 관리</span><span class="badge">12</span></li>
+              <li class="nav-item"><span class="icon">▥</span><span>전형 관리</span><span class="badge">4</span></li>
+              <li class="nav-item"><span class="icon">▤</span><span>자료 버전</span></li>
+              <li class="nav-item"><span class="icon">◍</span><span>리마인더</span><span class="badge">2</span></li>
+            </ul>
+          </nav>
+          <div class="section">
+            <p class="section-label">즐겨찾기</p>
+            <div class="project">
+              <div>
+                <div class="project-name">무신사 · 서류 준비</div>
+                <div class="project-meta">마감 D-3</div>
+              </div>
+              <div class="progress"><span style="width: 58%"></span></div>
+            </div>
+            <div class="project">
+              <div>
+                <div class="project-name">카카오 · 인터뷰</div>
+                <div class="project-meta">다음 일정 금요일</div>
+              </div>
+              <div class="progress"><span style="width: 78%"></span></div>
+            </div>
+            <div class="project">
+              <div>
+                <div class="project-name">라인 · 포트폴리오</div>
+                <div class="project-meta">검토 필요</div>
+              </div>
+              <div class="progress"><span style="width: 34%"></span></div>
+            </div>
+          </div>
+          <footer class="footer">
+            <div class="avatar">용</div>
+            <div class="person"><strong>취업 준비</strong><span>알림 2개</span></div>
+            <button class="icon-button">⚙</button>
+          </footer>
+        </aside>
+      </section>
+    </div>
+  </body>
+</html>

@@ -1,5 +1,41 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Pretendard Variable";
+  font-display: swap;
+  font-style: normal;
+  font-weight: 45 920;
+  src: url("./fonts/PretendardVariable.woff2") format("woff2-variations");
+}
 
 @theme {
   --spacing: 1px;
+  --font-sans:
+    "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+}
+
+:root {
+  --color-ink: oklch(23% 0.018 255);
+  --color-window: oklch(100% 0 0 / 0%);
+  --accent: oklch(62% 0.12 252);
+  --accent-soft: oklch(72% 0.082 245);
+
+  color: var(--color-ink);
+  background: var(--color-window);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--color-window);
+  overflow: hidden;
 }

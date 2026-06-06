@@ -1,10 +1,5 @@
-import { Link } from "@tanstack/react-router";
-
 function EntryPage() {
-  return <div><span>Entry</span>
-  <Link to="/resume">to files</Link></div>
+  return <main className="flex h-full flex-col overflow-hidden"></main>;
 }
 
-export {
-  EntryPage,
-}
+export { EntryPage };
