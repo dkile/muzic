@@ -12,11 +12,24 @@
   "app": {
     "windows": [
       {
-        "title": "mubaek",
+        "title": "무백",
         "width": 800,
-        "height": 600
+        "height": 600,
+        "decorations": true,
+        "transparent": true,
+        "titleBarStyle": "Overlay",
+        "hiddenTitle": true,
+        "windowEffects": {
+          "effects": ["contentBackground"],
+          "state": "active"
+        },
+        "trafficLightPosition": {
+          "x": 24,
+          "y": 28
+        }
       }
     ],
+    "macOSPrivateApi": true,
     "security": {
       "csp": null
     }
